@@ -10,7 +10,7 @@ After compilation, the script may be imported into a python script by "import bo
 for this example, a python environment is assumed. It is also assumed that one has a group of GSMMs on a python list named "models" and, in the same order, a list of numbers with the relative abundance of bacteria named "relative_abundance"  
 
 
-@import bottom_up_ecology_functions as bte
+import bottom_up_ecology_functions as bte
 
 
 evolution_of_exchange_reactions = {} # A python dictionary to store the results for the MCMC
@@ -20,7 +20,8 @@ initial_environment = bte.starting_environment(models) # defines an initial rand
 metabs = initial_environment.keys() # defines the metabolites that will conform the search-space.
 
 for i in xrange(1000): # 1000 Markov chain optimization steps
-    @bte.single_MCMC_run(numpy.random.random_integers(0, len(metabs), models, initial_environment, metabs, relative_abundance, evolution_of_exchange_reactions , i)
+
+    bte.single_MCMC_run(numpy.random.random_integers(0, len(metabs), models, initial_environment, metabs, relative_abundance, evolution_of_exchange_reactions , i)
 
 
 ### Dependencies
