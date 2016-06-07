@@ -23,7 +23,9 @@ for i in xrange(1000): # 1000 Markov chain optimization steps
     bte.single_MCMC_run(numpy.random.random_integers(0, len(metabs), models, initial_environment, metabs, relative_abundance, evolution_of_exchange_reactions , i)
 
 
-### list of dependencies with the versions that were used for the data described on the manuscript:
+### Dependencies
+
+List of dependencies with the versions that were used for the data described on the manuscript:
 
 - COBRApy (v. 0.4.1)
 - Numpy (v. 1.11.0)
