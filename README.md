@@ -20,7 +20,7 @@ initial_environment = bte.starting_environment(models) # defines an initial rand
 metabs = initial_environment.keys() # defines the metabolites that will conform the search-space.
 
 for i in xrange(1000): # 1000 Markov chain optimization steps
-    bte.single_MCMC_run(numpy.random.random_integers(0, len(metabs), models, initial_environment, metabs, relative_abundance, evolution_of_exchange_reactions , i)
+    @bte.single_MCMC_run(numpy.random.random_integers(0, len(metabs), models, initial_environment, metabs, relative_abundance, evolution_of_exchange_reactions , i)
 
 
 ### Dependencies
