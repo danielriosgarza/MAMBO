@@ -29,7 +29,7 @@ def starting_environment(list list_of_models):
    
    
     for reacts in all_exchange_reactions:
-        starting_reaction_dic[reacts]= (1000.0, numpy.random.uniform()) #set values of the exchage reaction dictionary to a random value
+        starting_reaction_dic[reacts]= (1000.0, -1*numpy.random.uniform()) #set values of the exchage reaction dictionary to a random value
 
     
     return starting_reaction_dic 
