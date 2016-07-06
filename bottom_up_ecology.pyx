@@ -113,14 +113,14 @@ def single_MCMC_run(int rdn, list list_of_models, dict current_media, list list_
     
     for i in xrange(number_of_models):
         z_on_current_media[i] = list_of_models[i].solution.f #collating the array with current objective values.
-        z_on_new_media[i] = c_set_growth_media(list_of_models[i], new_value)
+        z_on_new_media[i] = set_growth_media(list_of_models[i], new_value)
     
     if numpy.isnan(z_on_new_media).any():#Check if the change returned a None and if so, reject.
-        [c_set_growth_media(list_of_models[i], current_value) for i in xrange(number_of_models)] #whenever rejected, c
+        [set_growth_media(list_of_models[i], current_value) for i in xrange(number_of_models)] #whenever rejected, c
         print 'No solution!!!'
         return None
     
-    metropolis_stats = c_Metropolis(z_on_new_media, z_on_current_media, relative_abundances) #apply the c_Metropolis function.
+    metropolis_stats = Metropolis(z_on_new_media, z_on_current_media, relative_abundances) #apply the Metropolis function.
     
     if metropolis_stats[0]==True:#if the Metropolis function is accepted.
         current_media[target_metabolite] = new_value[1] #apply the new value to the external media.
@@ -133,6 +133,6 @@ def single_MCMC_run(int rdn, list list_of_models, dict current_media, list list_
         
     
     else:# Metropolis function is rejected.
-        [c_set_growth_media(list_of_models[i], current_value) for i in xrange(number_of_models)] #assure the models are restored to current values.
+        [set_growth_media(list_of_models[i], current_value) for i in xrange(number_of_models)] #assure the models are restored to current values.
         print 'rejected' 
         print 'Pearson correlation = %.20f\n' %metropolis_stats[4]
