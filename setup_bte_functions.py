@@ -5,7 +5,7 @@ from Cython.Distutils import build_ext
 
 import numpy
 
-ext = Extension("functions_cython", ["bottom_up_ecology.pyx"],
+ext = Extension("bottom_up_ecology.pyx", ["bottom_up_ecology.pyx"],
     include_dirs = [numpy.get_include()])
 
 
