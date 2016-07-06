@@ -11,10 +11,10 @@ from functools import partial
 def starting_environment(list list_of_models):
     '''return a python dictionary with all of the exchange reactions that are present in all models
     set the values of this dictionary to a random value to be used as the minimum flux bound for all reactions''' 
-
+    
     cdef list all_exchange_reactions = [] #list containing the exchange reactions.
     cdef dict starting_reaction_dic = {} # the dictionary with exchange reactions to collated.
-    
+    #keep in mind that this function will only work with ModelSEED names. If you use other models, adjust accordingly.
     cdef str e = 'e0' #identifier of exchange reactions 
     cdef str ex = 'EX'#identifier of exchange reactions
   
@@ -23,7 +23,7 @@ def starting_environment(list list_of_models):
     while z<len(list_of_models)-1:
         z+=1
         for reacts in list_of_models[z].reactions:
-            if (e in reacts and ex in reacts): #identify exchange reactions
+            if (e in reacts and ex in reacts): #identify exchange reactions (if you removed reactions by setting fluxes to zero, then you should add this condition here)
                 all_exchange_reactions.append(reacts.id) #append all to list
     all_exchange_reactions = list(set(all_exchange_reactions)) #asure that only one copy is kept.
    
