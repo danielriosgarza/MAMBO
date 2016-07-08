@@ -136,3 +136,25 @@ def single_MCMC_run(int rdn, list list_of_models, dict current_media, list list_
         [set_growth_media(list_of_models[i], current_value) for i in xrange(number_of_models)] #assure the models are restored to current values.
         print 'rejected' 
         print 'Pearson correlation = %.20f\n' %metropolis_stats[4]
+
+
+
+#in order to constrain the media within a range and to take only the effective minimum uptake rate, the following function can
+# added to the program:
+
+#def bound_environment(dict env_dict, models):
+#    cdef list k = env_dict.keys()
+#    cdef numpy.ndarray v = abs(numpy.array(env_dict.values()))
+#    cdef dict env_
+#    cdef int len_k = len(k)
+#    v = (1.0/max(v))*v #divide all fluxes by the maximum flux
+#    env_ = {k[i]:v[i] for i in xrange(len_k)}
+#    ed = {i:[] for i in env_}
+#    [get_exch_reactions(i, ed) for i in models]
+#    effective_media = {i: abs(min(ed[i])) for i in ed if min(ed[i])<0.0} #only keep the effective minimum negative flux.
+#    cdef list k1 = effective_media.keys()
+#    for i in k1:
+#        env_[i] = effective_media[i]
+#    return env_
+
+
