@@ -54,7 +54,7 @@ md5: 7f204c1c41b6fa4013e9aab63a2756fd
 modelsaf
 md5: bd7c0c3ebc8383a1d3653d5d2bd468cf
 
-once this files are obtained, the linux command:
+once these files are obtained, the linux command:
 
 $ cat models*>models.tar.gz
 
