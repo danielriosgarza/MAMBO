@@ -1,6 +1,6 @@
-# Bottom_Up_Ecology_Functions
+# MAMBO_Functions
 
-Codes for the functions that were used in the Bottom-Up ecology algorithm described by Garza et al. (2016). These functions were written on Cython and are intended to be used integrated with COBRApy (https://github.com/opencobra/cobrapy) on a python2.7 platform, using a collection of genome-scale metabolic models with model SEED identifiers for metabolites and reactions.  
+Codes for the functions that were used in the MAMBO algorithm described by Garza et al. (2018). These functions were written on Cython and are intended to be used integrated with COBRApy (https://github.com/opencobra/cobrapy) on a python2.7 platform, using a collection of genome-scale metabolic models with model SEED identifiers for metabolites and reactions.  
 
 The script "bottom_up_ecology.pyx" contains the functions for: 1) identifying exchange reactions, 2) setting-up an initial environment 3) Performing a Markov-Chain step to determine the accept/reject probabilities for random changes to the environment. In order to use these functions, one must install the prerequisites listed below and compile the script using the "setup_bte_functions.py" script.
 
