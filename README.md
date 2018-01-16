@@ -35,3 +35,31 @@ List of dependencies with the versions that were used for the data described on 
 - Scipy (v. 0.17.1)
 
 
+### Models
+
+1562 genome-scale metabolic models were used in the study. These models can be obtained from this repository, by downloding the files:
+
+modelsaa
+md5: 8f0d73a450048b2a8aab6e7b9f985b4d
+
+modelsab
+md5: e386510345c950ace6ec66a85c488ebb  
+
+modelsac
+md5: c4d2ed40d4a77de19719c9b19fa9e1e4
+
+modelsad
+md5: 7f204c1c41b6fa4013e9aab63a2756fd
+
+modelsaf
+md5: bd7c0c3ebc8383a1d3653d5d2bd468cf
+
+once this files are obtained, the linux command:
+
+$ cat models*>models.tar.gz
+
+will join them into a single file.
+
+models.tar.gz
+md5: b8694cc4da915317a5549ab46f0a3032
+
