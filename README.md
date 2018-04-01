@@ -4,6 +4,12 @@ Codes for the functions that were used in the MAMBO algorithm described by Garza
 
 The script "bottom_up_ecology.pyx" contains the functions for: 1) identifying exchange reactions, 2) setting-up an initial environment 3) Performing a Markov-Chain step to determine the accept/reject probabilities for random changes to the environment. In order to use these functions, one must install the prerequisites listed below and compile the script using the "setup_bte_functions.py" script.
 
+The functions are written on cython, thus they require compilation. To do this, one can use the terminal command to compile to their working directory:
+
+$ setup.py build_ext --inplace
+
+Other ways of compiling Cython code should also be available. [Check here](http://cython.readthedocs.io/en/latest/src/reference/compilation.html)
+
 After compilation, the script may be imported into a python script by "import bottom_up_ecology". An example of usage for maximizing the correlation between steady-state solutions for biomass functions and the relative abundance of species determined by metagenomic experiments is given below. For more details, see Garza et al.(2016).
 
 ###Example of MCMC optimization
