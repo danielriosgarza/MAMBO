@@ -112,7 +112,7 @@ def single_MCMC_run(int rdn, list list_of_models, dict current_media, list list_
     new_value = (target_metabolite, current_media[target_metabolite]+numpy.random.uniform(low=-2, high=2)) #small random value change to the reaction.
     
     for i in xrange(number_of_models):
-        z_on_current_media[i] = list_of_models[i].solution.f #collating the array with current objective values.
+        z_on_current_media[i] = list_of_models[i].solution.f #collating the array with current objective values.(change for newer versions of cobrapy: list_of_models[i].optimize().objective_value
         z_on_new_media[i] = set_growth_media(list_of_models[i], new_value)
     
     if numpy.isnan(z_on_new_media).any():#Check if the change returned a None and if so, reject.
