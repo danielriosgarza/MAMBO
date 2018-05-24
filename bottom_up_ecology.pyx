@@ -1,4 +1,4 @@
-
+#STUFF = "Hi" for some versions of cython
 cimport cython
 cimport numpy as numpy
 import numpy.random
