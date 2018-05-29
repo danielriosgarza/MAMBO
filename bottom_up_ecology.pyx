@@ -50,9 +50,11 @@ def set_growth_media(model, tuple new_flux_value):
         
         model.reactions.get_by_id(target_metabolite).lower_bound= (-1)*abs(flux) #ensure that the oprimization always results
                                                                         #in a negative flux for the minimum bound.
-        model.optimize()
+        model.optimize()#for newer versions of cobra: f=model.optimize()
     except KeyError:
         pass
+    
+    return model.solution.f #return the objective value.#for newer versions of cobra, return f
 
 
 
